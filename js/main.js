@@ -12,20 +12,20 @@ async function randomMeal() {
     }
   }
 
-  // JSX
   let div = `<div>
     <h1><span>Meal: </span> ${json.meals.map((p) => p.strMeal)}</h1>
     <h2><span>Category: </span>${json.meals.map((p) => p.strCategory)}</h2>
     <h3><span>Country: </span>${json.meals.map((p) => p.strArea)}</h3>
     <a><img src=${json.meals.map((p) => p.strMealThumb)}></a>
+    <iframe src= ${`https://www.youtube.com/embed/${(json.meals.map(p => p.strYoutube))[0].slice(-11)}`}></iframe>
     
     <ul><span>Ingredient: </span>${arr.join(" ")}</ul>
     <p><span>Instructions: </span>${json.meals.map(
       (p) => p.strInstructions
-    )} </p>
+  )} </p>
+    
     </div>`;
-
+      console.log(json.meals)
   container.innerHTML += div;
 }
 randomMeal();
-
